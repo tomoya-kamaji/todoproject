@@ -25,7 +25,7 @@ SECRET_KEY = 'g6fzwscz=u144#%97ee0q3embfwg*uxn(dbii2)6x*sqa8g45m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://cheesytrellok.herokuapp.com/"]
+ALLOWED_HOSTS = ['https://cheesytrellok.herokuapp.com']
 
 
 # Application definition
@@ -130,6 +130,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # 追記
 STATIC_URL = '/static/'
+
 # 追記
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
