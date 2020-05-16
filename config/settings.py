@@ -25,7 +25,7 @@ SECRET_KEY = 'g6fzwscz=u144#%97ee0q3embfwg*uxn(dbii2)6x*sqa8g45m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://cheesytrellok.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,10 +85,7 @@ DATABASES = {
     }
 }
 
-# 追記
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+
 
 ...
 
@@ -131,10 +128,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # 追記
 STATIC_URL = '/static/'
 
-# 追記
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+
 
 ...
 
@@ -149,14 +143,3 @@ LOGIN_URL = "login"
 
 ...
 ...
-
-DEBUG = False
-
-try:
-    from config.local_settings import *
-except ImportError:
-    pass
-
-if not DEBUG:
-    import django_heroku
-    django_heroku.settings(locals())
